@@ -1,0 +1,40 @@
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+  "username": "hungtin10",
+  "password": "123"
+}
+
+###
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+  "username": "hungtin1",
+  "password": "123"
+}
+###
+GET http://localhost:3000/api/user/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1bmd0aW4xIiwiaWF0IjoxNzIzMjk4NDQxLCJleHAiOjE3MjM5MDMyNDF9.q8es2o84RMKywxXvBT5fgLByxtGUl_hI9RGVma34CeY
+
+### 
+GET http://localhost:3000/api/file/getAll
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1bmd0aW4xIiwiaWF0IjoxNzIzMjk4NDQxLCJleHAiOjE3MjM5MDMyNDF9.q8es2o84RMKywxXvBT5fgLByxtGUl_hI9RGVma34CeY
+
+### 
+GET http://localhost:3000/api/file/download?fileName=1723463472495.mov
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1bmd0aW40IiwiaWF0IjoxNzIzODExMTc2LCJleHAiOjE3MjQ0MTU5NzZ9.OJrAUSbfWLopFdgU7A74gYtc2pKC7BZ_WT-qxgViqrc
+
+### 
+GET http://localhost:3000/api/file/generate?file=1724065034352.mp4&qualities=240p,360p
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1bmd0aW4xIiwiaWF0IjoxNzI0MDY3NjMwLCJleHAiOjE3MjQ2NzI0MzB9.B5MWWG1jqbQYmRB5tRpURGk757YS_jPrfH16AG42rgY
+
+###
+GET http://localhost:3000/api/file/handleDownload?key=1724065034352-240p
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1bmd0aW4xIiwiaWF0IjoxNzI0MDY3NjMwLCJleHAiOjE3MjQ2NzI0MzB9.B5MWWG1jqbQYmRB5tRpURGk757YS_jPrfH16AG42rgY
