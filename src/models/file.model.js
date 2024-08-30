@@ -14,6 +14,7 @@ const FileModel = new Schema({
     type: String,
     required: true
   },
+  relativeInfo: [],
   qualities: [],
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },

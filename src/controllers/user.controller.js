@@ -4,6 +4,7 @@ const {
   registerService,
 } = require("../services/user");
 
+// [POST] /user/login
 const loginController = async (req, res) => {
   try {
     if (!req?.body || !req.body?.username || !req.body?.password)
@@ -16,6 +17,7 @@ const loginController = async (req, res) => {
   }
 };
 
+// [POST] /user/profile
 const profileController = async (req, res) => {
   try {
     console.log(req.username);
@@ -28,6 +30,7 @@ const profileController = async (req, res) => {
   }
 };
 
+// [GET] /user/register
 const registerController = async (req, res) => {
   try {
     if (!req?.body || !req.body?.username || !req.body?.password)

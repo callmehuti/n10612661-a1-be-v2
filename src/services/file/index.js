@@ -44,9 +44,40 @@ const uploadFileService = async (username, fileName, mimeType) => {
   }
 };
 
+const removeFileService = async (username, fileName) => {
+  try {
+    await fileModel.deleteOne({ username, fileName });
+  } catch (error) {
+    throw error;
+  }
+}
+
+const addRelativeInfoService = async (username, fileName, info) => {
+  const file = await getFileInfoService(username, fileName);
+
+  const fileUpdated = await fileModel.findOneAndUpdate(
+    { username, fileName },
+    { relativeInfo: [...file.relativeInfo, info ] },
+    { new: true }
+  );
+  return fileUpdated;
+}
+
+const editRelativeInfoService = async (username, fileName, data) => {
+  const fileUpdated = await fileModel.findOneAndUpdate(
+    { username, fileName },
+    { relativeInfo: data },
+    { new: true }
+  );
+  return fileUpdated;
+}
+
 module.exports = {
   getAllService,
   uploadFileService,
   updateFileService,
   getFileInfoService,
+  removeFileService,
+  addRelativeInfoService,
+  editRelativeInfoService
 };
